@@ -1,0 +1,18 @@
+[submodule "src/mbedtls"]
+	path = src/mbedtls
+	url = https://github.com/dolit/mbedtls.git
+[submodule "src/curl"]
+	path = src/curl
+	url = https://github.com/dolit/curl.git
+[submodule "src/mongoose"]
+	path = src/mongoose
+	url = https://github.com/dolit/mongoose.git
+[submodule "src/frozen"]
+	path = src/frozen
+	url = https://github.com/dolit/frozen.git
+[submodule "src/slre"]
+	path = src/slre
+	url = https://github.com/dolit/slre.git
+[submodule "src/luajit"]
+	path = src/luajit
+	url = https://github.com/dolit/LuaJIT.git
