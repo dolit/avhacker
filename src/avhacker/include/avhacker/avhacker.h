@@ -1,3 +1,6 @@
+/* Copyright Dolit, Inc. All rights reserved.
+ */
+
 #ifndef AVHACKER_H
 #define AVHACKER_H
 
@@ -6,7 +9,8 @@ typedef void* avhacker_ctx;
 #define AVHACKER_ERROR_MAP(XX)\
     XX(OK, "success")\
     XX(UNKNOWN, "an unknown error occurred")\
-    XX(PATH_NOT_EXIST, "path not exist")
+    XX(LOAD_BOOT, "load boot file error")\
+    XX(SCRIPT_EXECUTE, "script execute error")
 
 #define AVHACKER_ERROR_GEN(n, s) AHE_##n,
 typedef enum {
@@ -15,14 +19,15 @@ typedef enum {
 #undef AVHACKER_ERROR_GEN
 
 int avhacker_create(
-    const char* init_path,
+    const char* boot_file,
+    const char* conf,
     avhacker_ctx* ctx
     );
 
 int avhacker_parse(
     avhacker_ctx ctx,
     const char* query_info,
-    char** result 
+    char** result
     );
 
 void avhacker_close(
